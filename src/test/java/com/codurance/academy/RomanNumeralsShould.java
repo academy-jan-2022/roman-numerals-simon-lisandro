@@ -23,6 +23,7 @@ public class RomanNumeralsShould {
         "14, XIV",
         "15, XV",
         "19, XIX",
+        "24, XXIV",
         "50, C"
     })
     public  void return_roman_number_when_decimal_is_given(int decimalNumber, String expected){
