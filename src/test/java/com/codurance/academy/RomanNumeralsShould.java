@@ -26,7 +26,7 @@ public class RomanNumeralsShould {
     return_III_when_3_is_given(){
         var romanNumerals = new RomanNumerals();
 
-        var result = romanNumerals.convert(2);
+        var result = romanNumerals.convert(3);
 
         assertEquals(result, "III");
     }
