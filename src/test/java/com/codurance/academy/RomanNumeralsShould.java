@@ -12,11 +12,14 @@ public class RomanNumeralsShould {
         "1, I",
         "2, II",
         "3, III",
+        "4, IV",
         "5, V",
         "6, VI",
         "7, VII",
         "8, VIII",
-        "10, X"
+        "10, X",
+        "13, XIII",
+        "15, XV"
     })
     public  void return_roman_number_when_decimal_is_given(int decimalNumber, String expected){
         var romanNumerals = new RomanNumerals();
