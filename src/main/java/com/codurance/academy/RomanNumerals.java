@@ -8,6 +8,9 @@ public class RomanNumerals {
         if(decimalNumber == 6){
             return "VI";
         }
+        if(decimalNumber == 7){
+            return "VII";
+        }
 
         StringBuilder output = new StringBuilder();
 
