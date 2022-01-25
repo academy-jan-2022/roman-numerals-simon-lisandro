@@ -17,6 +17,17 @@ public class RomanNumerals {
         StringBuilder output = new StringBuilder();
         var buffer = decimalNumber;
 
+        while(buffer >= 50){
+            if (decimalToRoman.containsKey(buffer)) {
+                output.append(decimalToRoman.get(buffer));
+                buffer -= buffer;
+            }
+            else {
+                output.append(decimalToRoman.get(50));
+                buffer -= 50;
+            }
+        }
+
         while(buffer >= 10){
             if (decimalToRoman.containsKey(buffer)) {
                 output.append(decimalToRoman.get(buffer));
