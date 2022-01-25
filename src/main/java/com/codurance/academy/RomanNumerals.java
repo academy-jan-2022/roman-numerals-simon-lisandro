@@ -5,40 +5,39 @@ import java.util.Map;
 
 public class RomanNumerals {
     private static Map<Integer, String> decimalToRoman = Map.of(
-        1, "I",
-        4, "IV",
-        5, "V",
-        9, "IX",
+        50, "L",
         10, "X",
-        14, "XIV",
-        19, "XIX",
-        50, "L"
-
+        9, "IX",
+        5, "V",
+        4, "IV",
+        1, "I"
     );
 
     public String convert(int decimalNumber) {
-
-
         StringBuilder output = new StringBuilder();
         var buffer = decimalNumber;
 
-        if (decimalToRoman.containsKey(buffer)) {
-            output.append(decimalToRoman.get(buffer));
-            buffer -= buffer;
-        }
         while(buffer >= 10){
-            output.append(decimalToRoman.get(10));
-            buffer -= 10;
+            if (decimalToRoman.containsKey(buffer)) {
+                output.append(decimalToRoman.get(buffer));
+                buffer -= buffer;
+            }
+            else {
+                output.append(decimalToRoman.get(10));
+                buffer -= 10;
+            }
         }
 
-        if (decimalToRoman.containsKey(buffer)) {
-            output.append(decimalToRoman.get(buffer));
-            buffer -= buffer;
-        }
 
         while(buffer >= 5){
-            output.append(decimalToRoman.get(5));
-            buffer -= 5;
+            if (decimalToRoman.containsKey(buffer)) {
+                output.append(decimalToRoman.get(buffer));
+                buffer -= buffer;
+            }
+            else {
+                output.append(decimalToRoman.get(5));
+                buffer -= 5;
+            }
         }
 
         if (decimalToRoman.containsKey(buffer)) {
@@ -53,4 +52,5 @@ public class RomanNumerals {
         return output.toString();
 
     }
+
 }
