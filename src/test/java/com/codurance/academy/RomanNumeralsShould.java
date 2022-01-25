@@ -23,6 +23,6 @@ public class RomanNumeralsShould {
 
         var result = romanNumerals.convert(decimalNumber);
 
-        assertEquals(result, expected);
+        assertEquals(expected, result);
     }
 }
