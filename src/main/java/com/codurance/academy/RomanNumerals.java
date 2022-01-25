@@ -5,7 +5,12 @@ public class RomanNumerals {
         StringBuilder output = new StringBuilder();
         var buffer = decimalNumber;
 
-        if(decimalNumber >= 5){
+        if(buffer >= 10){
+            output.append("X");
+            buffer -= 10;
+        }
+
+        if(buffer >= 5){
             output.append("V");
             buffer -= 5;
         }
