@@ -24,7 +24,7 @@ public class RomanNumeralsShould {
         "15, XV",
         "19, XIX",
         "24, XXIV",
-        "50, C"
+        "50, L"
     })
     public  void return_roman_number_when_decimal_is_given(int decimalNumber, String expected){
         var romanNumerals = new RomanNumerals();

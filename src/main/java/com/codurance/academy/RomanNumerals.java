@@ -12,21 +12,28 @@ public class RomanNumerals {
         10, "X",
         14, "XIV",
         19, "XIX",
-        50, "C"
+        50, "L"
 
     );
 
     public String convert(int decimalNumber) {
 
-        if (decimalToRoman.containsKey(decimalNumber))
-            return decimalToRoman.get(decimalNumber);
 
         StringBuilder output = new StringBuilder();
         var buffer = decimalNumber;
 
+        if (decimalToRoman.containsKey(buffer)) {
+            output.append(decimalToRoman.get(buffer));
+            buffer -= buffer;
+        }
         while(buffer >= 10){
             output.append(decimalToRoman.get(10));
             buffer -= 10;
+        }
+
+        if (decimalToRoman.containsKey(buffer)) {
+            output.append(decimalToRoman.get(buffer));
+            buffer -= buffer;
         }
 
         while(buffer >= 5){
@@ -34,6 +41,10 @@ public class RomanNumerals {
             buffer -= 5;
         }
 
+        if (decimalToRoman.containsKey(buffer)) {
+            output.append(decimalToRoman.get(buffer));
+            buffer -= buffer;
+        }
 
         for( var i = 0; i< buffer; i++){
             output.append(decimalToRoman.get(1));
