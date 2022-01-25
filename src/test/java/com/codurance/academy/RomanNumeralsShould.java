@@ -1,42 +1,24 @@
 package com.codurance.academy;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RomanNumeralsShould {
-    @Test public void
-    return_I_when_1_is_given(){
+    @ParameterizedTest
+    @CsvSource({
+        "1, I",
+        "2, II",
+        "3, III",
+        "5, V"
+    })
+    public  void return_roman_number_when_decimal_is_given(int decimalNumber, String expected){
         var romanNumerals = new RomanNumerals();
 
-        var result = romanNumerals.convert(1);
+        var result = romanNumerals.convert(decimalNumber);
 
-        assertEquals(result, "I");
-    }
-
-    @Test public void
-    return_II_when_2_is_given(){
-        var romanNumerals = new RomanNumerals();
-
-        var result = romanNumerals.convert(2);
-
-        assertEquals(result, "II");
-    }
-
-    @Test public void
-    return_III_when_3_is_given(){
-        var romanNumerals = new RomanNumerals();
-
-        var result = romanNumerals.convert(3);
-
-        assertEquals(result, "III");
-    }
-
-    @Test public void
-    return_V_when_5_is_given(){
-        var romanNumerals = new RomanNumerals();
-
-        var result = romanNumerals.convert(5);
-
-        assertEquals(result, "V");
+        assertEquals(result, expected);
     }
 }
