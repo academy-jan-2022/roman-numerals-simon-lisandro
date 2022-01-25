@@ -11,7 +11,8 @@ public class RomanNumerals {
         9, "IX",
         10, "X",
         14, "XIV",
-        19, "XIX"
+        19, "XIX",
+        50, "C"
 
     );
 
