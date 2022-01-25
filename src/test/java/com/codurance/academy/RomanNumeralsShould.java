@@ -30,4 +30,13 @@ public class RomanNumeralsShould {
 
         assertEquals(result, "III");
     }
+
+    @Test public void
+    return_V_when_5_is_given(){
+        var romanNumerals = new RomanNumerals();
+
+        var result = romanNumerals.convert(5);
+
+        assertEquals(result, "V");
+    }
 }
