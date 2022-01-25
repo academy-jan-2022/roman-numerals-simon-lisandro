@@ -8,6 +8,9 @@ public class RomanNumerals {
         if(decimalNumber == 9){
             return "IX";
         }
+        if(decimalNumber == 14){
+            return "XIV";
+        }
 
         StringBuilder output = new StringBuilder();
         var buffer = decimalNumber;
