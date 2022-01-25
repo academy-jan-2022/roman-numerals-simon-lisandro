@@ -15,7 +15,8 @@ public class RomanNumeralsShould {
         "5, V",
         "6, VI",
         "7, VII",
-        "8, VIII"
+        "8, VIII",
+        "10, X"
     })
     public  void return_roman_number_when_decimal_is_given(int decimalNumber, String expected){
         var romanNumerals = new RomanNumerals();
