@@ -2,12 +2,13 @@ package com.codurance.academy;
 
 public class RomanNumerals {
     public String convert(int decimalNumber) {
-        if(decimalNumber == 2) {
-            return "II";
+        StringBuilder output = new StringBuilder();
+
+        for( var i = 0; i< decimalNumber; i++){
+            output.append("I");
         }
-        if(decimalNumber == 3) {
-            return "III";
-        }
-        return "I";
+
+        return output.toString();
+
     }
 }
