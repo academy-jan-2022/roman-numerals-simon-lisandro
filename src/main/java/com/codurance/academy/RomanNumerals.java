@@ -16,12 +16,12 @@ public class RomanNumerals {
         var buffer = decimalNumber;
 
 
-        if(buffer >= 10){
+        while(buffer >= 10){
             output.append("X");
             buffer -= 10;
         }
 
-        if(buffer >= 5){
+        while(buffer >= 5){
             output.append("V");
             buffer -= 5;
         }
