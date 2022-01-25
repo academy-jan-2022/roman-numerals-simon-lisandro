@@ -1,67 +1,31 @@
 package com.codurance.academy;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 public class RomanNumerals {
-    private static Map<Integer, String> decimalToRoman = Map.of(
-        50, "L",
-        10, "X",
-        9, "IX",
-        5, "V",
-        4, "IV",
-        1, "I"
-    );
+    private static final SortedMap<Integer, String> decimalToRoman =
+        new TreeMap<>(Map.of(
+            50, "L",
+            10, "X",
+            9, "IX",
+            5, "V",
+            4, "IV",
+            1, "I"
+        )).descendingMap();
 
     public String convert(int decimalNumber) {
         StringBuilder output = new StringBuilder();
         var buffer = decimalNumber;
 
-        while(buffer >= 50){
-            if (decimalToRoman.containsKey(buffer)) {
-                output.append(decimalToRoman.get(buffer));
-                buffer -= buffer;
+        for (var key : decimalToRoman.keySet()) {
+            while(buffer >= key){
+                output.append(decimalToRoman.get(key));
+                buffer -= key;
             }
-            else {
-                output.append(decimalToRoman.get(50));
-                buffer -= 50;
-            }
-        }
-
-        while(buffer >= 10){
-            if (decimalToRoman.containsKey(buffer)) {
-                output.append(decimalToRoman.get(buffer));
-                buffer -= buffer;
-            }
-            else {
-                output.append(decimalToRoman.get(10));
-                buffer -= 10;
-            }
-        }
-
-
-        while(buffer >= 5){
-            if (decimalToRoman.containsKey(buffer)) {
-                output.append(decimalToRoman.get(buffer));
-                buffer -= buffer;
-            }
-            else {
-                output.append(decimalToRoman.get(5));
-                buffer -= 5;
-            }
-        }
-
-        if (decimalToRoman.containsKey(buffer)) {
-            output.append(decimalToRoman.get(buffer));
-            buffer -= buffer;
-        }
-
-        for( var i = 0; i< buffer; i++){
-            output.append(decimalToRoman.get(1));
         }
 
         return output.toString();
-
     }
-
 }
