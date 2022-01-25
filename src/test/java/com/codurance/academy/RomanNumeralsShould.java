@@ -24,6 +24,10 @@ public class RomanNumeralsShould {
         "15, XV",
         "19, XIX",
         "24, XXIV",
+        "40, XL",
+        "44, XLIV",
+        "45, VL",
+        "49, IL",
         "50, L",
         "51, LI"
     })

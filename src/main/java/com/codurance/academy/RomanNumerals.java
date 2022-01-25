@@ -8,6 +8,9 @@ public class RomanNumerals {
     private static final SortedMap<Integer, String> decimalToRoman =
         new TreeMap<>(Map.of(
             50, "L",
+            49, "IL",
+            45, "VL",
+            40, "XL",
             10, "X",
             9, "IX",
             5, "V",
