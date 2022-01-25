@@ -21,4 +21,13 @@ public class RomanNumeralsShould {
 
         assertEquals(result, "II");
     }
+
+    @Test public void
+    return_III_when_3_is_given(){
+        var romanNumerals = new RomanNumerals();
+
+        var result = romanNumerals.convert(2);
+
+        assertEquals(result, "III");
+    }
 }
