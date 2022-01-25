@@ -5,6 +5,9 @@ public class RomanNumerals {
         if(decimalNumber == 5){
             return "V";
         }
+        if(decimalNumber == 6){
+            return "VI";
+        }
 
         StringBuilder output = new StringBuilder();
 
