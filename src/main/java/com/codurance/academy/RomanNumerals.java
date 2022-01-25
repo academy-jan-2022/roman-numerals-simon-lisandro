@@ -6,28 +6,22 @@ import java.util.Map;
 public class RomanNumerals {
     private static Map<Integer, String> decimalToRoman = Map.of(
         1, "I",
+        4, "IV",
         5, "V",
-        10, "X"
-            );
+        9, "IX",
+        10, "X",
+        14, "XIV",
+        19, "XIX"
+
+    );
 
     public String convert(int decimalNumber) {
 
-        if(decimalNumber == 4){
-            return "IV";
-        }
-        if(decimalNumber == 9){
-            return "IX";
-        }
-        if(decimalNumber == 14){
-            return "XIV";
-        }
-        if(decimalNumber == 19){
-            return "XIX";
-        }
+        if (decimalToRoman.containsKey(decimalNumber))
+            return decimalToRoman.get(decimalNumber);
 
         StringBuilder output = new StringBuilder();
         var buffer = decimalNumber;
-
 
         while(buffer >= 10){
             output.append(decimalToRoman.get(10));
