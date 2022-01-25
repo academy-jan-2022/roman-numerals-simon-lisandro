@@ -20,6 +20,7 @@ public class RomanNumeralsShould {
         "9, IX",
         "10, X",
         "13, XIII",
+        "14, XIV",
         "15, XV"
     })
     public  void return_roman_number_when_decimal_is_given(int decimalNumber, String expected){
