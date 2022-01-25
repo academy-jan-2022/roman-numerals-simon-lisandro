@@ -5,11 +5,20 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RomanNumeralsShould {
     @Test public void
-    resturn_1_when_is_given(){
+    return_I_when_1_is_given(){
         var romanNumerals = new RomanNumerals();
 
         var result = romanNumerals.convert(1);
 
         assertEquals(result, "I");
+    }
+
+    @Test public void
+    return_II_when_2_is_given(){
+        var romanNumerals = new RomanNumerals();
+
+        var result = romanNumerals.convert(2);
+
+        assertEquals(result, "II");
     }
 }
